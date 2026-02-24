@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mini Arena 2D</title>
+<link rel="stylesheet" href="style.css">
+<link rel="manifest" href="manifest.json">
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('service-worker.js')
+      .then(() => console.log('Service Worker registrado!'));
+  }
+</script>
+</head>
+<body>
+<div id="menu">
+    <h1>Mini Arena 2D</h1>
+    <div id="characterSelect">
+        <p>Escolha seu personagem:</p>
+        <button class="charBtn" data-color="red">Vermelho</button>
+        <button class="charBtn" data-color="blue">Azul</button>
+        <button class="charBtn" data-color="green">Verde</button>
+    </div>
+    <button id="startBtn">Iniciar Jogo</button>
+    <p id="highscore">Recorde: 0</p>
+</div>
+
+<canvas id="gameCanvas"></canvas>
+
+<div id="controls">
+    <button id="up">▲</button>
+    <button id="left">◀</button>
+    <button id="down">▼</button>
+    <button id="right">▶</button>
+</div>
+
+<!-- Sons -->
+<audio id="hitSound" src="assets/hit.wav"></audio>
+<audio id="collectSound" src="assets/collect.wav"></audio>
+
+<script src="game.js"></script>
+</body>
+</html>
